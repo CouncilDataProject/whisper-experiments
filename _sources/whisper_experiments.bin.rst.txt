@@ -1,0 +1,21 @@
+whisper\_experiments.bin package
+================================
+
+Submodules
+----------
+
+whisper\_experiments.bin.str\_len module
+----------------------------------------
+
+.. automodule:: whisper_experiments.bin.str_len
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: whisper_experiments.bin
+   :members:
+   :undoc-members:
+   :show-inheritance:
