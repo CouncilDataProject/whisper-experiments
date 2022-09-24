@@ -1,0 +1,10 @@
+default_context:
+    author_name: "Eva Maxfield Brown"
+    author_email: "evamaxfieldbrown@gmail.com"
+    hosting_github_username_or_org: "councildataproject"
+    project_name: "whisper-experiments"
+    project_slug: "whisper-experiments"
+    python_slug: "whisper_experiments"
+    project_short_description: "Experiments and planning for potential integration of OpenAIs whisper Speech-to-Text model into CDP."
+    hosting_pypi_username: "councildataproject"
+    license: "MIT License"
