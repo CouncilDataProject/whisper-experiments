@@ -26,7 +26,10 @@ classifiers = [
   "Programming Language :: Python :: 3.10",
 ]
 dynamic = ["version"]
-dependencies = []
+dependencies = [
+  "text-diff>=0.0.5",
+  "whisper=1.0",
+]
 
 [project.urls]
 Homepage = "https://github.com/councildataproject/whisper-experiments"
