@@ -96,6 +96,18 @@ for line in diffs.lines:
 # is_removed False, is_added True, is_modified False
 ```
 
+## `text_diff`
+
+The wrapped `text_diff` object is available in every `TextDiff` object, via the `text_diff` attribute.
+
+```Python
+print(type(diffs.lines[0].line.text_diff))
+print(diffs.lines[0].line.text_diff)
+
+# <class 'text_diff.extract_diff.ModifiedLine'>
+# ModifiedLine(content_before="How you doin'", mask_before="             ", content_after="How yoou doin'", mask_after="     +")
+```
+
 # Types
 
 `text_differences()` returns `TextComparision`.
