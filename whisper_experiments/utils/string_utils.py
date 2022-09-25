@@ -49,6 +49,13 @@ class TextDiff:
             and self.content_after == other.content_after
         )
 
+    def __str__(self) -> str:
+        if self.is_modified:
+            return f"Modified: {self.content_before} -> {self.content_after}"
+        if self.is_removed:
+            return f"Removed: {self.content}"
+        return f"Added: {self.content}"
+
     @property
     def is_removed(self) -> bool:
         """
@@ -127,6 +134,13 @@ class LineComparison(NamedTuple):
     # List of different words in this line
     words: List[TextDiff]
 
+    def __str__(self) -> str:
+        words_str = ", ".join(map(str, self.words))
+        return (
+            f"    line: {self.line}\n"
+            f"    words: [{words_str}]\n"
+        )
+
 
 class TextComparison(NamedTuple):
     # Similarity score between the left and the right text blobs
@@ -136,6 +150,13 @@ class TextComparison(NamedTuple):
 
     def __eq__(self, other):
         return self.similarity == other.similarity and self.lines == other.lines
+
+    def __str__(self) -> str:
+        lines_str = "\n".join(map(str, self.lines))
+        return (
+            f"similarity: {self.similarity}\n"
+            f"lines: [\n{lines_str}\n]"
+        )
 
 
 def _is_unchanged(text_diff: TextType) -> bool:
@@ -171,9 +192,8 @@ def word_differences(
     -----
     Unchanged words are excluded.
     """
-    diff_words = filterfalse(
-        _is_unchanged, text_diff.text_differences(words_1, words_2).diff_lines
-    )
+    diff_words = text_diff.text_differences(words_1, words_2).diff_lines
+    diff_words = filterfalse(_is_unchanged, diff_words)
     return map(TextDiff, diff_words)
 
 
@@ -255,6 +275,7 @@ def line_differences(
     for diff_line in text_diff.text_differences(lines_1, lines_2).diff_lines:
         line_num_1, line_num_2 = increment_line_num(diff_line, line_num_1, line_num_2)
 
+        # Same lines are excluded
         if not _is_unchanged(diff_line):
             words_1, words_2 = get_words_to_compare(diff_line)
             yield LineComparison(
