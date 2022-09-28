@@ -1,11 +1,9 @@
-# Quickstart
+# Calculating Word, Line, and Overall Text Differences
 
-[`string_utils.text_differences()`](./string_utils.py) is a wrapper around
-[`text_diff.text_differences()`](https://github.com/Envinorma/text_diff/blob/33353ca34c63620ee8344a17f7e938c391785e04/text_diff/extract_diff.py#L158),
-which in turn is a wrapper around [`difflib.unified_diff()`](https://docs.python.org/3.8/library/difflib.html#difflib.unified_diff).
+## Quickstart
 
-```Python
-from whisper_experiments.utils.string_utils import text_differences
+```python
+from whisper_experiments.diff import text_differences
 
 text_1 = (
     "Hello world\n"
@@ -36,13 +34,13 @@ print(diffs)
 
 Unchanged lines and words are omitted in the `TextComparison` return object from `text_differences()`.
 
-# `TextDiff`
+### `TextDiff`
 
 Every line or word is stored as a `TextDiff`.
 In the above example, the first line was determined to be modified, going from the left to the right version.
 Changes in modified lines (words) can be retrieved by `content_before` and `content_after` property methods.
 
-```Python
+```python
 print(
     f"content_before: {diffs.lines[0].line.content_before}\n"
     f"content_after: {diffs.lines[0].line.content_after}"
@@ -55,14 +53,14 @@ print(
 `content_before` and `content_after` are really not meaningful for removed or added lines.
 Use the `content` property method for those.
 
-```Python
+```python
 print(f"content: {diffs.lines[1].line.content}")
 # content: Nice to meet you
 ```
 
 The content getter property methods will return `None` if illogical.
 
-```Python
+```python
 print(
     f"content_before: {diffs.lines[1].line.content_before}\n"
     # lines[1] is a removed line going from left to right, so content_after is None
@@ -85,9 +83,9 @@ print(f"content: {diffs.lines[0].line.content}")
 # content: None
 ```
 
-## `is_removed`, `is_added`, `is_modified`
+### `is_removed`, `is_added`, `is_modified`
 
-```Python
+```python
 for line in diffs.lines:
     print(f"is_removed {line.line.is_removed}, is_added {line.line.is_added}, is_modified {line.line.is_modified}")
 
@@ -96,11 +94,11 @@ for line in diffs.lines:
 # is_removed False, is_added True, is_modified False
 ```
 
-## `text_diff`
+### `text_diff`
 
 The wrapped `text_diff` object is available in every `TextDiff` object, via the `text_diff` attribute.
 
-```Python
+```python
 print(type(diffs.lines[0].line.text_diff))
 print(diffs.lines[0].line.text_diff)
 
@@ -108,11 +106,11 @@ print(diffs.lines[0].line.text_diff)
 # ModifiedLine(content_before="How you doin'", mask_before="             ", content_after="How yoou doin'", mask_after="     +")
 ```
 
-# Types
+## Types
 
 `text_differences()` returns `TextComparision`.
 
-```Python
+```python
 class TextComparison(NamedTuple):
     # Similarity score between the left and the right text blobs
     similarity: float
@@ -123,7 +121,7 @@ class TextComparison(NamedTuple):
 Which contains a list of `LineComparison` for every removed, added or modified line.
 `LineComparison` in turn contains a list of removed, added or modified words in the line.
 
-```Python
+```python
 class LineComparison(NamedTuple):
     # Union[ModifiedLine, RemovedLine, AddedLine] wrapped in TextDiff
     line: TextDiff
@@ -133,7 +131,7 @@ class LineComparison(NamedTuple):
 
 `TextDiff` is a simple wrapper for `text_diff` types, such as `ModifiedLine`.
 
-```Python
+```python
 print(type(diffs), end="\n\n")
 for line in diffs.lines:
     print(type(line))
@@ -154,3 +152,11 @@ for line in diffs.lines:
 # line: TextDiff[<class 'text_diff.extract_diff.AddedLine'>]
 # words: [TextDiff[<class 'text_diff.extract_diff.AddedLine'>, TextDiff[<class 'text_diff.extract_diff.AddedLine'>, TextDiff[<class 'text_diff.extract_diff.AddedLine'>]]
 ```
+
+## Notes
+
+[whisper_experiements.diff.text_differences()](./whisper_experiments.html#whisper_experiments.diff.text_differences)
+is a wrapper around
+[text_diff.text_differences()](https://github.com/Envinorma/text_diff/blob/33353ca34c63620ee8344a17f7e938c391785e04/text_diff/extract_diff.py#L158),
+which in turn is a wrapper around
+[difflib.unified_diff()](https://docs.python.org/3.8/library/difflib.html#difflib.unified_diff).

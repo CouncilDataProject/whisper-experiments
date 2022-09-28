@@ -1,6 +1,3 @@
-Welcome to whisper-experiments's documentation!
-======================================
-
 .. toctree::
    :hidden:
    :maxdepth: 1
@@ -9,6 +6,7 @@ Welcome to whisper-experiments's documentation!
    Overview <self>
    installation
    Package modules <modules>
+   String Comparison <diff>
    contributing
 
 .. mdinclude:: ../README.md

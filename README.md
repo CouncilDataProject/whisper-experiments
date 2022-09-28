@@ -14,10 +14,42 @@ Experiments and planning for potential integration of OpenAIs whisper Speech-to-
 
 ## Quickstart
 
-```python
-from whisper_experiments import example
+### Dataset Gather and Preprocessing
 
-print(example.str_len("hello"))  # prints 5
+```python
+# TODO
+```
+
+### String Comparison
+
+```python
+from whisper_experiments.diff import text_differences
+
+text_1 = (
+    "Hello world\n"
+    "How you doin'\n"
+    "Nice to meet you\n"
+)
+text_2 = (
+    "Hello world\n"
+    "How yoou doin'\n"
+    "Fine, thank you\n"
+)
+diffs = text_differences(text_1, text_2)
+print(diffs)
+
+# similarity: 83.33333333333334
+# lines: [
+#     line: Modified: How you doin' -> How yoou doin'
+#     words: [Modified: you -> yoou]
+# 
+#     line: Removed: Nice to meet you
+#     words: [Removed: Nice, Removed: to, Removed: meet, Removed: you]
+# 
+#     line: Added: Fine, thank you
+#     words: [Added: Fine,, Added: thank, Added: you]
+#
+# ]
 ```
 
 ## Documentation

@@ -194,14 +194,15 @@ def word_differences(
     words_2: Iterable[str]
         Right list of words
 
-    Yields
-    ------
+    Returns
+    -------
     TextDiff
         Union[RemovedWord, AddedWord, ModifiedWord] wrapped as TextDiff
 
     See Also
     --------
-    text_diff.text_differences()
+    text_differences
+        Calculate similarity of the texts and all line differences.
 
     Notes
     -----
@@ -238,8 +239,10 @@ def line_differences(
 
     See Also
     --------
-    text_diff.text_differences()
-    word_differences()
+    text_differences
+        Calculate similarity of the texts and all line differences.
+    word_differences
+        Calculate just word differences.
 
     Notes
     -----
@@ -320,15 +323,16 @@ def text_differences(
         Function used to split a line into words.
         Default is str.split()
 
-    Yields
-    ------
+    Returns
+    -------
     TextComparison
         Similarity score
         List of different lines
 
     See Also
     --------
-    line_differences()
+    line_differences
+        Calculate just line differences.
 
     Notes
     -----
