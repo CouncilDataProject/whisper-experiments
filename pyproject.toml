@@ -27,6 +27,7 @@ classifiers = [
 ]
 dynamic = ["version"]
 dependencies = [
+  "rapidfuzz~=2.0",
   "text-diff>=0.0.5",
   "whisper=1.0",
 ]
