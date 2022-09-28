@@ -21,9 +21,6 @@ Word = Union[ModifiedWord, RemovedWord, AddedWord]
 Line = Union[ModifiedLine, RemovedLine, AddedLine]
 TextType = Union[Word, Line]
 
-SimilarityCalculator = Callable[[str, str], float]
-WordSplitter = Callable[[str], Iterable[str]]
-
 
 class TextDiff:
     """
@@ -200,7 +197,7 @@ def word_differences(
 def line_differences(
     lines_1: Iterable[str],
     lines_2: Iterable[str],
-    word_split_func: Optional[WordSplitter] = None,
+    word_split_func: Callable[[str], Iterable[str]] = str.split,
 ) -> Iterator[LineComparison]:
     """
     Return list of removed/added/modified lines.
@@ -211,7 +208,7 @@ def line_differences(
         Left list of lines
     lines_2: Iterable[str]
         Right list of lines
-    word_split_func: Optional[WordSplitter] = None
+    word_split_func: Callable[[str], Iterable[str]]
         Function used to split a line into words.
         Default is str.split()
 
@@ -230,7 +227,6 @@ def line_differences(
     -----
     Unchanged lines are excluded.
     """
-    word_split_func = word_split_func or (lambda line: line.split())
 
     def increment_line_num(
         line: Line, line_index_1: int, line_index_2: int
@@ -286,8 +282,8 @@ def line_differences(
 def text_differences(
     text_1: str,
     text_2: str,
-    similarity_calc: Optional[SimilarityCalculator] = None,
-    word_split_func: Optional[WordSplitter] = None,
+    similarity_calc: Callable[[str, str], float] = rapidfuzz.fuzz.QRatio,
+    word_split_func: Callable[[str], Iterable[str]] = str.split,
 ) -> TextComparison:
     """
     Compare left and right text blobs.
@@ -299,10 +295,10 @@ def text_differences(
         Left text
     text_2: str
         Right text
-    similarity_calc: Optional[SimilarityCalculator] = None
+    similarity_calc: Callable[[str, str], float]
         Function used to calculate similarity score.
         Default is rapidfuzz.fuzz.QRatio()
-    word_split_func: Optional[WordSplitter] = None
+    word_split_func: Callable[[str], Iterable[str]]
         Function used to split a line into words.
         Default is str.split()
 
@@ -320,7 +316,6 @@ def text_differences(
     -----
     Unchanged lines are excluded.
     """
-    similarity_calc = similarity_calc or rapidfuzz.fuzz.QRatio
     return TextComparison(
         similarity_calc(text_1, text_2),
         list(
