@@ -23,7 +23,7 @@ from text_diff import AddedLine, ModifiedLine, RemovedLine, UnchangedLine
 ModifiedWord = ModifiedLine
 RemovedWord = RemovedLine
 AddedWord = AddedLine
-Word = Union[ModifiedWord, RemovedWord, AddedWord]
+Word = Union[ModifiedLine, RemovedLine, AddedLine]
 Line = Union[ModifiedLine, RemovedLine, AddedLine]
 TextType = Union[Word, Line]
 
@@ -44,7 +44,15 @@ class TextDiff:
         """
         self.text_diff = text_diff
 
-    def __eq__(self, other) -> bool:
+    def __eq__(self, other: object) -> bool:
+        # Mypy typing tries it's hardest:
+        # https://stackoverflow.com/a/54816069
+        if not isinstance(other, TextDiff):
+            raise NotImplementedError(
+                "TextDiff can only assert equals when provided "
+                "another TextDiff object."
+            )
+
         return (
             self.is_removed == other.is_removed
             and self.is_added == other.is_added
@@ -150,7 +158,15 @@ class TextComparison(NamedTuple):
     # List of different lines
     lines: List[LineComparison]
 
-    def __eq__(self, other):
+    def __eq__(self, other: object) -> bool:
+        # Mypy typing tries it's hardest:
+        # https://stackoverflow.com/a/54816069
+        if not isinstance(other, TextComparison):
+            raise NotImplementedError(
+                "TextComparison can only assert equals when provided "
+                "another TextComparison object."
+            )
+
         return self.similarity == other.similarity and self.lines == other.lines
 
     def __str__(self) -> str:
