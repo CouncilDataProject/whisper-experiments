@@ -1,16 +1,23 @@
-import pytest
-from whisper_experiments.utils.string_utils import (
-    TextDiff,
-    Line,
-    AddedWord,
-    RemovedWord,
-    ModifiedWord,
-    LineComparison,
-    word_differences,
-    line_differences,
-)
-from text_diff import AddedLine, RemovedLine, ModifiedLine, Mask
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 from typing import List
+
+import pytest
+from text_diff import AddedLine, Mask, ModifiedLine, RemovedLine
+
+from whisper_experiments.diff import (
+    AddedWord,
+    Line,
+    LineComparison,
+    ModifiedWord,
+    RemovedWord,
+    TextDiff,
+    line_differences,
+    word_differences,
+)
+
+###############################################################################
 
 AL = AddedLine
 RL = RemovedLine
@@ -20,6 +27,8 @@ RW = RemovedWord
 MW = ModifiedWord
 T = TextDiff
 LC = LineComparison
+
+###############################################################################
 
 
 # This test is just a sanity check for [Removed|Added|Modified]Line objects.

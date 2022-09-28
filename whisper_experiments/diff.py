@@ -1,17 +1,23 @@
-import rapidfuzz
-import text_diff
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+from itertools import filterfalse
 from typing import (
-    NamedTuple,
-    Union,
     Callable,
-    Optional,
-    List,
     Iterable,
     Iterator,
+    List,
+    NamedTuple,
+    Optional,
     Tuple,
+    Union,
 )
-from text_diff import UnchangedLine, ModifiedLine, RemovedLine, AddedLine
-from itertools import filterfalse
+
+import rapidfuzz
+import text_diff
+from text_diff import AddedLine, ModifiedLine, RemovedLine, UnchangedLine
+
+###############################################################################
 
 # Aliases to just indicate the object refers to a word
 ModifiedWord = ModifiedLine
@@ -20,6 +26,8 @@ AddedWord = AddedLine
 Word = Union[ModifiedWord, RemovedWord, AddedWord]
 Line = Union[ModifiedLine, RemovedLine, AddedLine]
 TextType = Union[Word, Line]
+
+###############################################################################
 
 
 class TextDiff:
@@ -133,10 +141,7 @@ class LineComparison(NamedTuple):
 
     def __str__(self) -> str:
         words_str = ", ".join(map(str, self.words))
-        return (
-            f"    line: {self.line}\n"
-            f"    words: [{words_str}]\n"
-        )
+        return f"    line: {self.line}\n" f"    words: [{words_str}]\n"
 
 
 class TextComparison(NamedTuple):
@@ -150,10 +155,7 @@ class TextComparison(NamedTuple):
 
     def __str__(self) -> str:
         lines_str = "\n".join(map(str, self.lines))
-        return (
-            f"similarity: {self.similarity}\n"
-            f"lines: [\n{lines_str}\n]"
-        )
+        return f"similarity: {self.similarity}\n" f"lines: [\n{lines_str}\n]"
 
 
 def _is_unchanged(text_diff: TextType) -> bool:
