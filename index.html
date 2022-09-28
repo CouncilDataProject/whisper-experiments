@@ -5,8 +5,8 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Installation" href="installation.html" />
 
-    <meta name="generator" content="sphinx-5.2.0, furo 2022.09.15"/>
-        <title>whisper-experiments 0.1.dev1+g20a7f88 documentation</title>
+    <meta name="generator" content="sphinx-5.2.2, furo 2022.09.15"/>
+        <title>whisper-experiments 0.1.dev1+gdd846b2 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
@@ -124,7 +124,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="#"><div class="brand">whisper-experiments 0.1.dev1+g20a7f88 documentation</div></a>
+      <a href="#"><div class="brand">whisper-experiments 0.1.dev1+gdd846b2 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -147,7 +147,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
   
   
-  <span class="sidebar-brand-text">whisper-experiments 0.1.dev1+g20a7f88 documentation</span>
+  <span class="sidebar-brand-text">whisper-experiments 0.1.dev1+gdd846b2 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -160,12 +160,10 @@
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="modules.html">Package modules</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="whisper_experiments.html">whisper_experiments package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="whisper_experiments.bin.html">whisper_experiments.bin package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whisper_experiments.html">whisper_experiments package</a></li>
 </ul>
 </li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="diff.html">String Comparison</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
 </ul>
 
@@ -200,11 +198,8 @@
           </label>
         </div>
         <article role="main">
-          <section id="welcome-to-whisper-experiments-s-documentation">
-<h1>Welcome to whisper-experiments’s documentation!<a class="headerlink" href="#welcome-to-whisper-experiments-s-documentation" title="Permalink to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
+          <div class="toctree-wrapper compound">
 </div>
-</section>
 <section id="whisper-experiments">
 <h1>whisper-experiments<a class="headerlink" href="#whisper-experiments" title="Permalink to this heading">#</a></h1>
 <a class="reference external image-reference" href="https://github.com/councildataproject/whisper-experiments/actions"><img alt="Build Status" src="https://github.com/councildataproject/whisper-experiments/workflows/CI/badge.svg" /></a>
@@ -218,11 +213,44 @@
 </section>
 <section id="quickstart">
 <h2>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">whisper_experiments</span> <span class="kn">import</span> <span class="n">example</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">example</span><span class="o">.</span><span class="n">str_len</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">))</span>  <span class="c1"># prints 5</span>
+<section id="dataset-gather-and-preprocessing">
+<h3>Dataset Gather and Preprocessing<a class="headerlink" href="#dataset-gather-and-preprocessing" title="Permalink to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO</span>
 </pre></div>
 </div>
+</section>
+<section id="string-comparison">
+<h3>String Comparison<a class="headerlink" href="#string-comparison" title="Permalink to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">whisper_experiments.diff</span> <span class="kn">import</span> <span class="n">text_differences</span>
+
+<span class="n">text_1</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Hello world</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;How you doin&#39;</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;Nice to meet you</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="n">text_2</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Hello world</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;How yoou doin&#39;</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;Fine, thank you</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+<span class="n">diffs</span> <span class="o">=</span> <span class="n">text_differences</span><span class="p">(</span><span class="n">text_1</span><span class="p">,</span> <span class="n">text_2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">diffs</span><span class="p">)</span>
+
+<span class="c1"># similarity: 83.33333333333334</span>
+<span class="c1"># lines: [</span>
+<span class="c1">#     line: Modified: How you doin&#39; -&gt; How yoou doin&#39;</span>
+<span class="c1">#     words: [Modified: you -&gt; yoou]</span>
+<span class="c1">#</span>
+<span class="c1">#     line: Removed: Nice to meet you</span>
+<span class="c1">#     words: [Removed: Nice, Removed: to, Removed: meet, Removed: you]</span>
+<span class="c1">#</span>
+<span class="c1">#     line: Added: Fine, thank you</span>
+<span class="c1">#     words: [Added: Fine,, Added: thank, Added: you]</span>
+<span class="c1">#</span>
+<span class="c1"># ]</span>
+</pre></div>
+</div>
+</section>
 </section>
 <section id="documentation">
 <h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading">#</a></h2>

@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="whisper_experiments.bin package" href="whisper_experiments.bin.html" /><link rel="prev" title="whisper_experiments" href="modules.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Calculating Word, Line, and Overall Text Differences" href="diff.html" /><link rel="prev" title="whisper_experiments" href="modules.html" />
 
-    <meta name="generator" content="sphinx-5.2.0, furo 2022.09.15"/>
-        <title>whisper_experiments package - whisper-experiments 0.1.dev1+g20a7f88 documentation</title>
+    <meta name="generator" content="sphinx-5.2.2, furo 2022.09.15"/>
+        <title>whisper_experiments package - whisper-experiments 0.1.dev1+gdd846b2 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
@@ -124,7 +124,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">whisper-experiments 0.1.dev1+g20a7f88 documentation</div></a>
+      <a href="index.html"><div class="brand">whisper-experiments 0.1.dev1+gdd846b2 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -147,7 +147,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">whisper-experiments 0.1.dev1+g20a7f88 documentation</span>
+  <span class="sidebar-brand-text">whisper-experiments 0.1.dev1+gdd846b2 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -160,12 +160,10 @@
 <li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="modules.html">Package modules</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current has-children current-page"><a class="current reference internal" href="#">whisper_experiments package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="whisper_experiments.bin.html">whisper_experiments.bin package</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">whisper_experiments package</a></li>
 </ul>
 </li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="diff.html">String Comparison</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
 </ul>
 
@@ -202,53 +200,259 @@
         <article role="main">
           <section id="whisper-experiments-package">
 <h1>whisper_experiments package<a class="headerlink" href="#whisper-experiments-package" title="Permalink to this heading">#</a></h1>
-<section id="subpackages">
-<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading">#</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="whisper_experiments.bin.html">whisper_experiments.bin package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="whisper_experiments.bin.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="whisper_experiments.bin.html#whisper-experiments-bin-str-len-module">whisper_experiments.bin.str_len module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="whisper_experiments.bin.html#whisper_experiments.bin.str_len.Args"><code class="docutils literal notranslate"><span class="pre">Args</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="whisper_experiments.bin.html#whisper_experiments.bin.str_len.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="whisper_experiments.bin.html#module-contents">Module contents</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</section>
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">#</a></h2>
 </section>
-<section id="whisper-experiments-example-module">
-<h2>whisper_experiments.example module<a class="headerlink" href="#whisper-experiments-example-module" title="Permalink to this heading">#</a></h2>
-<span class="target" id="module-whisper_experiments.example"></span><dl class="py function">
-<dt class="sig sig-object py" id="whisper_experiments.example.str_len">
-<span class="sig-prename descclassname"><span class="pre">whisper_experiments.example.</span></span><span class="sig-name descname"><span class="pre">str_len</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="reference internal" href="_modules/whisper_experiments/example.html#str_len"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#whisper_experiments.example.str_len" title="Permalink to this definition">#</a></dt>
-<dd><p>Return the count of characters in the provided string.</p>
+<section id="module-whisper_experiments.diff">
+<span id="whisper-experiments-diff-module"></span><h2>whisper_experiments.diff module<a class="headerlink" href="#module-whisper_experiments.diff" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="whisper_experiments.diff.LineComparison">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">whisper_experiments.diff.</span></span><span class="sig-name descname"><span class="pre">LineComparison</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">line</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">words</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/whisper_experiments/diff.html#LineComparison"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#whisper_experiments.diff.LineComparison" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">NamedTuple</span></code></p>
+<p>Create new instance of LineComparison(line, words)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="whisper_experiments.diff.LineComparison.line">
+<span class="sig-name descname"><span class="pre">line</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#whisper_experiments.diff.TextDiff" title="whisper_experiments.diff.TextDiff"><span class="pre">TextDiff</span></a></em><a class="headerlink" href="#whisper_experiments.diff.LineComparison.line" title="Permalink to this definition">#</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="whisper_experiments.diff.LineComparison.words">
+<span class="sig-name descname"><span class="pre">words</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#whisper_experiments.diff.TextDiff" title="whisper_experiments.diff.TextDiff"><span class="pre">TextDiff</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#whisper_experiments.diff.LineComparison.words" title="Permalink to this definition">#</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="whisper_experiments.diff.TextComparison">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">whisper_experiments.diff.</span></span><span class="sig-name descname"><span class="pre">TextComparison</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">similarity</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lines</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/whisper_experiments/diff.html#TextComparison"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#whisper_experiments.diff.TextComparison" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">NamedTuple</span></code></p>
+<p>Create new instance of TextComparison(similarity, lines)</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="whisper_experiments.diff.TextComparison.lines">
+<span class="sig-name descname"><span class="pre">lines</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#whisper_experiments.diff.LineComparison" title="whisper_experiments.diff.LineComparison"><span class="pre">LineComparison</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#whisper_experiments.diff.TextComparison.lines" title="Permalink to this definition">#</a></dt>
+<dd><p>Alias for field number 1</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="whisper_experiments.diff.TextComparison.similarity">
+<span class="sig-name descname"><span class="pre">similarity</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></em><a class="headerlink" href="#whisper_experiments.diff.TextComparison.similarity" title="Permalink to this definition">#</a></dt>
+<dd><p>Alias for field number 0</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="whisper_experiments.diff.TextDiff">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">whisper_experiments.diff.</span></span><span class="sig-name descname"><span class="pre">TextDiff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text_diff</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Union</span><span class="p"><span class="pre">[</span></span><span class="pre">ModifiedLine</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">RemovedLine</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">AddedLine</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/whisper_experiments/diff.html#TextDiff"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#whisper_experiments.diff.TextDiff" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Wrapper for text_diff objects e.g. ModifiedLine.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>string: str</strong></dt><dd><p>The string to get the count of characters for.</p>
+<dt><strong>text_diff: TextType</strong></dt><dd><p>The text_diff object to wrap</p>
 </dd>
 </dl>
 </dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><dl class="simple">
-<dt>int</dt><dd><p>The count of characters in the string.</p>
+</dl>
+<dl class="py property">
+<dt class="sig sig-object py" id="whisper_experiments.diff.TextDiff.content">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">content</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#whisper_experiments.diff.TextDiff.content" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>Optional[str]</dt><dd><p>The wrapped text. None if is_modified() == True.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Notes</p>
+<p>If wrapped text is modified, it cannot be decided which content to return,
+i.e. the left or the right version.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="whisper_experiments.diff.TextDiff.content_after">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">content_after</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#whisper_experiments.diff.TextDiff.content_after" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>Optional[str]</dt><dd><p>The right version of the wrapped text.
+None if is_removed() == True</p>
 </dd>
 </dl>
 </dd>
 </dl>
 </dd></dl>
 
+<dl class="py property">
+<dt class="sig sig-object py" id="whisper_experiments.diff.TextDiff.content_before">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">content_before</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#whisper_experiments.diff.TextDiff.content_before" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>Optional[str]</dt><dd><p>The left version of the wrapped text.
+None if is_added() == True</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="whisper_experiments.diff.TextDiff.is_added">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_added</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#whisper_experiments.diff.TextDiff.is_added" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>True if wrapped text is added from left version to right</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="whisper_experiments.diff.TextDiff.is_modified">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_modified</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#whisper_experiments.diff.TextDiff.is_modified" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>True if wrapped text is modified from left version to right</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="whisper_experiments.diff.TextDiff.is_removed">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_removed</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#whisper_experiments.diff.TextDiff.is_removed" title="Permalink to this definition">#</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>True if wrapped text is removed from left version to right</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="whisper_experiments.diff.line_differences">
+<span class="sig-prename descclassname"><span class="pre">whisper_experiments.diff.</span></span><span class="sig-name descname"><span class="pre">line_differences</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">lines_1:</span> <span class="pre">~typing.Iterable[str],</span> <span class="pre">lines_2:</span> <span class="pre">~typing.Iterable[str],</span> <span class="pre">word_split_func:</span> <span class="pre">~typing.Callable[[str],</span> <span class="pre">~typing.Iterable[str]]</span> <span class="pre">=</span> <span class="pre">&lt;method</span> <span class="pre">'split'</span> <span class="pre">of</span> <span class="pre">'str'</span> <span class="pre">objects&gt;</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#whisper_experiments.diff.LineComparison" title="whisper_experiments.diff.LineComparison"><span class="pre">LineComparison</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/whisper_experiments/diff.html#line_differences"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#whisper_experiments.diff.line_differences" title="Permalink to this definition">#</a></dt>
+<dd><p>Return list of removed/added/modified lines.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>lines_1: Iterable[str]</strong></dt><dd><p>Left list of lines</p>
+</dd>
+<dt><strong>lines_2: Iterable[str]</strong></dt><dd><p>Right list of lines</p>
+</dd>
+<dt><strong>word_split_func: Callable[[str], Iterable[str]]</strong></dt><dd><p>Function used to split a line into words.
+Default is str.split()</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Yields<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>LineComparison</dt><dd><p>Union[RemovedLine, AddedLine, ModifiedLine] wrapped as TextDiff
+List of different words in the line</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#whisper_experiments.diff.text_differences" title="whisper_experiments.diff.text_differences"><code class="xref py py-obj docutils literal notranslate"><span class="pre">text_differences</span></code></a></dt><dd><p>Calculate similarity of the texts and all line differences.</p>
+</dd>
+<dt><a class="reference internal" href="#whisper_experiments.diff.word_differences" title="whisper_experiments.diff.word_differences"><code class="xref py py-obj docutils literal notranslate"><span class="pre">word_differences</span></code></a></dt><dd><p>Calculate just word differences.</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>Unchanged lines are excluded.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="whisper_experiments.diff.text_differences">
+<span class="sig-prename descclassname"><span class="pre">whisper_experiments.diff.</span></span><span class="sig-name descname"><span class="pre">text_differences</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">text_1:</span> <span class="pre">str,</span> <span class="pre">text_2:</span> <span class="pre">str,</span> <span class="pre">similarity_calc:</span> <span class="pre">~typing.Callable[[str,</span> <span class="pre">str],</span> <span class="pre">float]</span> <span class="pre">=</span> <span class="pre">&lt;cyfunction</span> <span class="pre">QRatio&gt;,</span> <span class="pre">word_split_func:</span> <span class="pre">~typing.Callable[[str],</span> <span class="pre">~typing.Iterable[str]]</span> <span class="pre">=</span> <span class="pre">&lt;method</span> <span class="pre">'split'</span> <span class="pre">of</span> <span class="pre">'str'</span> <span class="pre">objects&gt;</span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#whisper_experiments.diff.TextComparison" title="whisper_experiments.diff.TextComparison"><span class="pre">TextComparison</span></a></span></span><a class="reference internal" href="_modules/whisper_experiments/diff.html#text_differences"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#whisper_experiments.diff.text_differences" title="Permalink to this definition">#</a></dt>
+<dd><p>Compare left and right text blobs.
+They are first compared as lines, then as words for the changed lines.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>text_1: str</strong></dt><dd><p>Left text</p>
+</dd>
+<dt><strong>text_2: str</strong></dt><dd><p>Right text</p>
+</dd>
+<dt><strong>similarity_calc: Callable[[str, str], float]</strong></dt><dd><p>Function used to calculate similarity score.
+Default is rapidfuzz.fuzz.QRatio()</p>
+</dd>
+<dt><strong>word_split_func: Callable[[str], Iterable[str]]</strong></dt><dd><p>Function used to split a line into words.
+Default is str.split()</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>TextComparison</dt><dd><p>Similarity score
+List of different lines</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#whisper_experiments.diff.line_differences" title="whisper_experiments.diff.line_differences"><code class="xref py py-obj docutils literal notranslate"><span class="pre">line_differences</span></code></a></dt><dd><p>Calculate just line differences.</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>Unchanged lines are excluded.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="whisper_experiments.diff.word_differences">
+<span class="sig-prename descclassname"><span class="pre">whisper_experiments.diff.</span></span><span class="sig-name descname"><span class="pre">word_differences</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">words_1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">words_2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterator</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#whisper_experiments.diff.TextDiff" title="whisper_experiments.diff.TextDiff"><span class="pre">TextDiff</span></a><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/whisper_experiments/diff.html#word_differences"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#whisper_experiments.diff.word_differences" title="Permalink to this definition">#</a></dt>
+<dd><p>Return list of removed/added/modified words bewteen the given lists of words.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>words_1: Iterable[str]</strong></dt><dd><p>Left list of words</p>
+</dd>
+<dt><strong>words_2: Iterable[str]</strong></dt><dd><p>Right list of words</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>TextDiff</dt><dd><p>Union[RemovedWord, AddedWord, ModifiedWord] wrapped as TextDiff</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#whisper_experiments.diff.text_differences" title="whisper_experiments.diff.text_differences"><code class="xref py py-obj docutils literal notranslate"><span class="pre">text_differences</span></code></a></dt><dd><p>Calculate similarity of the texts and all line differences.</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>Unchanged words are excluded.</p>
+</dd></dl>
+
 </section>
-<section id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this heading">#</a></h2>
+<section id="module-whisper_experiments">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-whisper_experiments" title="Permalink to this heading">#</a></h2>
 <p>Top-level package for whisper_experiments.</p>
-<span class="target" id="module-whisper_experiments"></span></section>
+</section>
 </section>
 
         </article>
@@ -256,12 +460,12 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="whisper_experiments.bin.html">
+          <a class="next-page" href="diff.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">whisper_experiments.bin package</div>
+                <div class="title">Calculating Word, Line, and Overall Text Differences</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -309,13 +513,33 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">whisper_experiments package</a><ul>
-<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#whisper-experiments-example-module">whisper_experiments.example module</a><ul>
-<li><a class="reference internal" href="#whisper_experiments.example.str_len"><code class="docutils literal notranslate"><span class="pre">str_len()</span></code></a></li>
+<li><a class="reference internal" href="#module-whisper_experiments.diff">whisper_experiments.diff module</a><ul>
+<li><a class="reference internal" href="#whisper_experiments.diff.LineComparison"><code class="docutils literal notranslate"><span class="pre">LineComparison</span></code></a><ul>
+<li><a class="reference internal" href="#whisper_experiments.diff.LineComparison.line"><code class="docutils literal notranslate"><span class="pre">LineComparison.line</span></code></a></li>
+<li><a class="reference internal" href="#whisper_experiments.diff.LineComparison.words"><code class="docutils literal notranslate"><span class="pre">LineComparison.words</span></code></a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#module-contents">Module contents</a></li>
+<li><a class="reference internal" href="#whisper_experiments.diff.TextComparison"><code class="docutils literal notranslate"><span class="pre">TextComparison</span></code></a><ul>
+<li><a class="reference internal" href="#whisper_experiments.diff.TextComparison.lines"><code class="docutils literal notranslate"><span class="pre">TextComparison.lines</span></code></a></li>
+<li><a class="reference internal" href="#whisper_experiments.diff.TextComparison.similarity"><code class="docutils literal notranslate"><span class="pre">TextComparison.similarity</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#whisper_experiments.diff.TextDiff"><code class="docutils literal notranslate"><span class="pre">TextDiff</span></code></a><ul>
+<li><a class="reference internal" href="#whisper_experiments.diff.TextDiff.content"><code class="docutils literal notranslate"><span class="pre">TextDiff.content</span></code></a></li>
+<li><a class="reference internal" href="#whisper_experiments.diff.TextDiff.content_after"><code class="docutils literal notranslate"><span class="pre">TextDiff.content_after</span></code></a></li>
+<li><a class="reference internal" href="#whisper_experiments.diff.TextDiff.content_before"><code class="docutils literal notranslate"><span class="pre">TextDiff.content_before</span></code></a></li>
+<li><a class="reference internal" href="#whisper_experiments.diff.TextDiff.is_added"><code class="docutils literal notranslate"><span class="pre">TextDiff.is_added</span></code></a></li>
+<li><a class="reference internal" href="#whisper_experiments.diff.TextDiff.is_modified"><code class="docutils literal notranslate"><span class="pre">TextDiff.is_modified</span></code></a></li>
+<li><a class="reference internal" href="#whisper_experiments.diff.TextDiff.is_removed"><code class="docutils literal notranslate"><span class="pre">TextDiff.is_removed</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#whisper_experiments.diff.line_differences"><code class="docutils literal notranslate"><span class="pre">line_differences()</span></code></a></li>
+<li><a class="reference internal" href="#whisper_experiments.diff.text_differences"><code class="docutils literal notranslate"><span class="pre">text_differences()</span></code></a></li>
+<li><a class="reference internal" href="#whisper_experiments.diff.word_differences"><code class="docutils literal notranslate"><span class="pre">word_differences()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-whisper_experiments">Module contents</a></li>
 </ul>
 </li>
 </ul>

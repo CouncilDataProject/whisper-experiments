@@ -5,8 +5,8 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="whisper_experiments package" href="whisper_experiments.html" /><link rel="prev" title="Installation" href="installation.html" />
 
-    <meta name="generator" content="sphinx-5.2.0, furo 2022.09.15"/>
-        <title>whisper_experiments - whisper-experiments 0.1.dev1+g20a7f88 documentation</title>
+    <meta name="generator" content="sphinx-5.2.2, furo 2022.09.15"/>
+        <title>whisper_experiments - whisper-experiments 0.1.dev1+gdd846b2 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
@@ -124,7 +124,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">whisper-experiments 0.1.dev1+g20a7f88 documentation</div></a>
+      <a href="index.html"><div class="brand">whisper-experiments 0.1.dev1+gdd846b2 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -147,7 +147,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
-  <span class="sidebar-brand-text">whisper-experiments 0.1.dev1+g20a7f88 documentation</span>
+  <span class="sidebar-brand-text">whisper-experiments 0.1.dev1+gdd846b2 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -160,12 +160,10 @@
 <li class="toctree-l1"><a class="reference internal" href="index.html">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Package modules</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="whisper_experiments.html">whisper_experiments package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="whisper_experiments.bin.html">whisper_experiments.bin package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="whisper_experiments.html">whisper_experiments package</a></li>
 </ul>
 </li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="diff.html">String Comparison</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
 </ul>
 
@@ -205,21 +203,33 @@
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="whisper_experiments.html">whisper_experiments package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="whisper_experiments.html#subpackages">Subpackages</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="whisper_experiments.bin.html">whisper_experiments.bin package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="whisper_experiments.bin.html#submodules">Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="whisper_experiments.bin.html#whisper-experiments-bin-str-len-module">whisper_experiments.bin.str_len module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="whisper_experiments.bin.html#module-contents">Module contents</a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="whisper_experiments.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="whisper_experiments.html#whisper-experiments-example-module">whisper_experiments.example module</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="whisper_experiments.html#whisper_experiments.example.str_len"><code class="docutils literal notranslate"><span class="pre">str_len()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="whisper_experiments.html#module-whisper_experiments.diff">whisper_experiments.diff module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="whisper_experiments.html#whisper_experiments.diff.LineComparison"><code class="docutils literal notranslate"><span class="pre">LineComparison</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="whisper_experiments.html#whisper_experiments.diff.LineComparison.line"><code class="docutils literal notranslate"><span class="pre">LineComparison.line</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="whisper_experiments.html#whisper_experiments.diff.LineComparison.words"><code class="docutils literal notranslate"><span class="pre">LineComparison.words</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="whisper_experiments.html#module-contents">Module contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="whisper_experiments.html#whisper_experiments.diff.TextComparison"><code class="docutils literal notranslate"><span class="pre">TextComparison</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="whisper_experiments.html#whisper_experiments.diff.TextComparison.lines"><code class="docutils literal notranslate"><span class="pre">TextComparison.lines</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="whisper_experiments.html#whisper_experiments.diff.TextComparison.similarity"><code class="docutils literal notranslate"><span class="pre">TextComparison.similarity</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="whisper_experiments.html#whisper_experiments.diff.TextDiff"><code class="docutils literal notranslate"><span class="pre">TextDiff</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="whisper_experiments.html#whisper_experiments.diff.TextDiff.content"><code class="docutils literal notranslate"><span class="pre">TextDiff.content</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="whisper_experiments.html#whisper_experiments.diff.TextDiff.content_after"><code class="docutils literal notranslate"><span class="pre">TextDiff.content_after</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="whisper_experiments.html#whisper_experiments.diff.TextDiff.content_before"><code class="docutils literal notranslate"><span class="pre">TextDiff.content_before</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="whisper_experiments.html#whisper_experiments.diff.TextDiff.is_added"><code class="docutils literal notranslate"><span class="pre">TextDiff.is_added</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="whisper_experiments.html#whisper_experiments.diff.TextDiff.is_modified"><code class="docutils literal notranslate"><span class="pre">TextDiff.is_modified</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="whisper_experiments.html#whisper_experiments.diff.TextDiff.is_removed"><code class="docutils literal notranslate"><span class="pre">TextDiff.is_removed</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="whisper_experiments.html#whisper_experiments.diff.line_differences"><code class="docutils literal notranslate"><span class="pre">line_differences()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="whisper_experiments.html#whisper_experiments.diff.text_differences"><code class="docutils literal notranslate"><span class="pre">text_differences()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="whisper_experiments.html#whisper_experiments.diff.word_differences"><code class="docutils literal notranslate"><span class="pre">word_differences()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="whisper_experiments.html#module-whisper_experiments">Module contents</a></li>
 </ul>
 </li>
 </ul>
