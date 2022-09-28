@@ -39,7 +39,7 @@ Unchanged lines and words are omitted in the `TextComparison` return object from
 # `TextDiff`
 
 Every line or word is stored as a `TextDiff`.
-In the above example, the second line was determined to be modified, going from the left to the right version.
+In the above example, the first line was determined to be modified, going from the left to the right version.
 Changes in modified lines (words) can be retrieved by `content_before` and `content_after` property methods.
 
 ```Python
