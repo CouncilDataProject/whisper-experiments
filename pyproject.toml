@@ -29,7 +29,7 @@ dynamic = ["version"]
 dependencies = [
   "rapidfuzz~=2.0",
   "text-diff>=0.0.5",
-  "whisper=1.0",
+  "whisper==1.0",
 ]
 
 [project.urls]
@@ -75,8 +75,8 @@ dev = [
 
 # entry points
 # https://peps.python.org/pep-0621/#entry-points
-[project.entry-points."console_scripts"]
-calc-string-length = "whisper_experiments.bin.str_len:main"
+# [project.entry-points."console_scripts"]
+# calc-string-length = "whisper_experiments.bin.str_len:main"
 
 # build settings
 # https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
