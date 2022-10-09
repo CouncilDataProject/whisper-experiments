@@ -80,8 +80,8 @@ dev = [
 
 # entry points
 # https://peps.python.org/pep-0621/#entry-points
-# [project.entry-points."console_scripts"]
-# calc-string-length = "whisper_experiments.bin.str_len:main"
+[project.entry-points."console_scripts"]
+generate_and_archive_cdp_whisper_experiments_data = "whisper_experiments.bin.generate_and_archive_data:main"
 
 # build settings
 # https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
