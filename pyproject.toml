@@ -93,7 +93,11 @@ include-package-data = true
 exclude = ["*docs/*", "*tests/*"]
 
 [tool.setuptools.package-data]
-"*" = ["*.yaml", "py.typed"]
+"*" = [
+  "*.yaml",
+  "py.typed",
+  "cdp-whisper-experiments-data.zip",
+]
 
 # tools
 [tool.black]
