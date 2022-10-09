@@ -65,6 +65,12 @@ def generate_google_sr_dataset(
         The path to a directory to store the generated transcripts in.
         Default: gsr-transcripts/
 
+    Returns
+    -------
+    pd.DataFrame
+        The same session dataset with GSR transcription columns added.
+        Note: the rows may be in different order due to threading.
+
     See Also
     --------
     whisper_experiments.data.get_ground_truth_dataset
