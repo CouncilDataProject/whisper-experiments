@@ -111,3 +111,7 @@ ENV/
 
 # VSCode
 .vscode
+
+# Project specific
+.keys
+cdp-datasets/
