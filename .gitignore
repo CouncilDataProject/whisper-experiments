@@ -115,3 +115,6 @@ ENV/
 # Project specific
 .keys
 cdp-datasets/
+gsr-transcripts/
+.tmp-archive-work-dir/
+cdp-whisper-experiments-data/
