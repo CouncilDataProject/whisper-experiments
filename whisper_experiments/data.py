@@ -11,6 +11,7 @@ AUDIO_URI_TEMPLATE = "gs://{instance}.appspot.com/{session_content_hash}-audio.w
 
 ###############################################################################
 
+
 class GroundTruthDatasetFields:
     id_ = "id"
     key = "key"
@@ -20,10 +21,13 @@ class GroundTruthDatasetFields:
     audio_uri = "audio_uri"
     ground_truth_transcript_path = "ground_truth_transcript_path"
 
+
 ALL_GROUND_TRUTH_DATASET_FIELDS = [
     getattr(GroundTruthDatasetFields, attr)
-    for attr in dir(GroundTruthDatasetFields) if "__" not in attr
+    for attr in dir(GroundTruthDatasetFields)
+    if "__" not in attr
 ]
+
 
 class FullDatasetFields:
     id_ = "id"
@@ -36,9 +40,11 @@ class FullDatasetFields:
     gsr_transcript_path = "gsr_transcript_path"
     gsr_transcription_time = "gsr_transcription_time"
 
+
 ALL_FULL_DATASET_FIELDS = [
     getattr(FullDatasetFields, attr)
-    for attr in dir(FullDatasetFields) if "__" not in attr
+    for attr in dir(FullDatasetFields)
+    if "__" not in attr
 ]
 
 ###############################################################################
@@ -81,17 +87,22 @@ def get_ground_truth_dataset(test: bool = False) -> pd.DataFrame:
     )
 
     # For each session, generate the audio URI
-    sessions[GroundTruthDatasetFields.audio_uri] = (
-        sessions[GroundTruthDatasetFields.session_content_hash].apply(
-            lambda session_content_hash: AUDIO_URI_TEMPLATE.format(
-                instance=INFRASTRUCTURE_SLUG,
-                session_content_hash=session_content_hash,
-            )
+    sessions[GroundTruthDatasetFields.audio_uri] = sessions[
+        GroundTruthDatasetFields.session_content_hash
+    ].apply(
+        lambda session_content_hash: AUDIO_URI_TEMPLATE.format(
+            instance=INFRASTRUCTURE_SLUG,
+            session_content_hash=session_content_hash,
         )
     )
 
     # Rename columns
-    sessions = sessions.rename(columns={"session_index": GroundTruthDatasetFields.session_index_in_event, "transcript_path": GroundTruthDatasetFields.ground_truth_transcript_path,})
+    sessions = sessions.rename(
+        columns={
+            "session_index": GroundTruthDatasetFields.session_index_in_event,
+            "transcript_path": GroundTruthDatasetFields.ground_truth_transcript_path,
+        }
+    )
 
     # Subset fields
     return sessions[ALL_GROUND_TRUTH_DATASET_FIELDS]

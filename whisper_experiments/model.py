@@ -14,11 +14,13 @@ from .data import FullDatasetFields
 
 ###############################################################################
 
+
 @dataclass
-class GSRTranscribeParams():
+class GSRTranscribeParams:
     row: pd.Series
     credentials_file: str
     storage_dir: Path
+
 
 def _wrapped_gsr_transcribe(
     params: GSRTranscribeParams,
@@ -44,7 +46,11 @@ def _wrapped_gsr_transcribe(
     return params.row
 
 
-def generate_google_sr_dataset(sessions: pd.DataFrame, credentials_file: str, storage_dir: Path = Path("gsr-transcripts/"),) -> pd.DataFrame:
+def generate_google_sr_dataset(
+    sessions: pd.DataFrame,
+    credentials_file: str,
+    storage_dir: Path = Path("gsr-transcripts/"),
+) -> pd.DataFrame:
     """
     Process the audio files from the dataset with Google Speech-to-Text.
 
@@ -68,9 +74,6 @@ def generate_google_sr_dataset(sessions: pd.DataFrame, credentials_file: str, st
     ----
     Whatever directory is provided as the storage_dir be emptied prior to run.
     """
-    # Init model
-    model = GoogleCloudSRModel(credentials_file=credentials_file)
-
     # Empty Directory
     if storage_dir.exists():
         shutil.rmtree(storage_dir)
@@ -81,7 +84,14 @@ def generate_google_sr_dataset(sessions: pd.DataFrame, credentials_file: str, st
     # Transcribe
     transcribed_results = thread_map(
         _wrapped_gsr_transcribe,
-        [GSRTranscribeParams(row, credentials_file=credentials_file, storage_dir=storage_dir,) for _, row in sessions.iterrows()]
+        [
+            GSRTranscribeParams(
+                row,
+                credentials_file=credentials_file,
+                storage_dir=storage_dir,
+            )
+            for _, row in sessions.iterrows()
+        ],
     )
 
     # Merge back to DataFrame and return
