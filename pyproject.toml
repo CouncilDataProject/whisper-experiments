@@ -27,12 +27,13 @@ classifiers = [
 ]
 dynamic = ["version"]
 dependencies = [
-  "cdp-backend[pipeline]",  # no pin, set by cdp-data
+  "cdp-backend[pipeline]",  # no pin, set by upstreams
   "cdp-data==0.0.7",
-  "pandas",  # no pin, set by cdp-data
+  "pandas",  # no pin, set by upstreams
+  "pyarrow",
   "rapidfuzz~=2.0",
   "text-diff>=0.0.5",
-  "tqdm",  # no pin, set by a lot of the upstreams
+  "tqdm",  # no pin, set by upstreams
   "whisper==1.0",
 ]
 
