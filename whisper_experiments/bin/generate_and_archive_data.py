@@ -15,6 +15,7 @@ log = logging.getLogger(__name__)
 
 ###############################################################################
 
+
 class Args(argparse.Namespace):
     def __init__(self) -> None:
         self.__parse()
@@ -51,6 +52,7 @@ class Args(argparse.Namespace):
 
 ###############################################################################
 
+
 def _generate_and_archive_data(
     test: bool,
     credentials_path: str,
@@ -82,7 +84,7 @@ def main() -> None:
             log_level = logging.DEBUG
         else:
             log_level = logging.INFO
-        
+
         logging.basicConfig(
             level=log_level,
             format="[%(levelname)4s: %(module)s:%(lineno)4s %(asctime)s] %(message)s",

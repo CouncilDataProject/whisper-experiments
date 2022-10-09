@@ -11,7 +11,9 @@ from cdp_data import CDPInstances, datasets
 
 INFRASTRUCTURE_SLUG = CDPInstances.Seattle
 AUDIO_URI_TEMPLATE = "gs://{instance}.appspot.com/{session_content_hash}-audio.wav"
-ARCHIVED_DATA_PATH = Path(__file__).parent / "assets" / "cdp-whisper-experiments-data.zip"
+ARCHIVED_DATA_PATH = (
+    Path(__file__).parent / "assets" / "cdp-whisper-experiments-data.zip"
+)
 UNPACKED_ARCHIVE_DATA_DIR = Path("cdp-whisper-experiments-data/")
 
 ###############################################################################
@@ -130,7 +132,11 @@ def _archive_dataset(
         temp_work_dir.mkdir(parents=True)
 
         # Helper to copy to new location and return relative path from working dir
-        def _copy_return_relative_path(current_path: str, new_filepath: Path, working_dir: Path,) -> str:
+        def _copy_return_relative_path(
+            current_path: str,
+            new_filepath: Path,
+            working_dir: Path,
+        ) -> str:
             shutil.copy(current_path, new_filepath)
             relative_path = new_filepath.relative_to(working_dir)
             return str(relative_path)
@@ -156,9 +162,9 @@ def _archive_dataset(
         sessions.to_parquet(temp_work_dir / "data.parquet")
 
         # Create archive
-        shutil.make_archive(archive_name, "zip", temp_work_dir)
+        shutil.make_archive(str(archive_name), "zip", temp_work_dir)
         return archive_name.with_suffix(".zip")
-    
+
     # Always cleanup work dir
     finally:
         shutil.rmtree(temp_work_dir)
@@ -192,5 +198,5 @@ def load_cdp_whisper_experiment_data(
             FullDatasetFields.gsr_transcript_path,
         ):
             sessions.at[i, path_col] = (storage_dir / row[path_col]).resolve()
-    
+
     return sessions
