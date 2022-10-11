@@ -1,13 +1,37 @@
 whisper\_experiments package
 ============================
 
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   whisper_experiments.bin
+
 Submodules
 ----------
+
+whisper\_experiments.data module
+--------------------------------
+
+.. automodule:: whisper_experiments.data
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
 whisper\_experiments.diff module
 --------------------------------
 
 .. automodule:: whisper_experiments.diff
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+whisper\_experiments.model module
+---------------------------------
+
+.. automodule:: whisper_experiments.model
    :members:
    :undoc-members:
    :show-inheritance:

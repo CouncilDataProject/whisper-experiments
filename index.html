@@ -5,10 +5,10 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Installation" href="installation.html" />
 
-    <meta name="generator" content="sphinx-5.2.2, furo 2022.09.15"/>
-        <title>whisper-experiments 0.1.dev1+gdd846b2 documentation</title>
+    <meta name="generator" content="sphinx-5.2.3, furo 2022.09.29"/>
+        <title>whisper-experiments 0.1.dev1+g0994a65 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
@@ -124,7 +124,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="#"><div class="brand">whisper-experiments 0.1.dev1+gdd846b2 documentation</div></a>
+      <a href="#"><div class="brand">whisper-experiments 0.1.dev1+g0994a65 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -147,7 +147,7 @@
       <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
   
   
-  <span class="sidebar-brand-text">whisper-experiments 0.1.dev1+gdd846b2 documentation</span>
+  <span class="sidebar-brand-text">whisper-experiments 0.1.dev1+g0994a65 documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
@@ -160,7 +160,10 @@
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="modules.html">Package modules</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="whisper_experiments.html">whisper_experiments package</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="whisper_experiments.html">whisper_experiments package</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="whisper_experiments.bin.html">whisper_experiments.bin package</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="diff.html">String Comparison</a></li>
@@ -184,7 +187,8 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -213,9 +217,21 @@
 </section>
 <section id="quickstart">
 <h2>Quickstart<a class="headerlink" href="#quickstart" title="Permalink to this heading">#</a></h2>
-<section id="dataset-gather-and-preprocessing">
-<h3>Dataset Gather and Preprocessing<a class="headerlink" href="#dataset-gather-and-preprocessing" title="Permalink to this heading">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># TODO</span>
+<section id="loading-the-experiment-data">
+<h3>Loading the Experiment Data<a class="headerlink" href="#loading-the-experiment-data" title="Permalink to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">whisper_experiments</span> <span class="kn">import</span> <span class="n">data</span>
+
+<span class="n">sessions</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">load_cdp_whisper_experiment_data</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sessions</span><span class="p">)</span>
+
+<span class="c1">#    audio_uri                 ground_truth_transcript_path  ...  gsr_transcript_path  gsr_transcription_time</span>
+<span class="c1"># 0  gs://cdp-seattle-2172...  /home/eva/active/...  ...  /home/eva/active/...             546.295414</span>
+<span class="c1"># 1  gs://cdp-seattle-2172...  /home/eva/active/...  ...  /home/eva/active/...            2080.045368</span>
+<span class="c1"># 2  gs://cdp-seattle-2172...  /home/eva/active/...  ...  /home/eva/active/...            2751.341955</span>
+<span class="c1"># 3  gs://cdp-seattle-2172...  /home/eva/active/...  ...  /home/eva/active/...            1188.916651</span>
+<span class="c1"># 4  gs://cdp-seattle-2172...  /home/eva/active/...  ...  /home/eva/active/...            1537.532535</span>
+<span class="c1">#</span>
+<span class="c1"># [5 rows x 9 columns]</span>
 </pre></div>
 </div>
 </section>

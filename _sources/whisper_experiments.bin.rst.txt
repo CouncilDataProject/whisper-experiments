@@ -1,0 +1,21 @@
+whisper\_experiments.bin package
+================================
+
+Submodules
+----------
+
+whisper\_experiments.bin.generate\_and\_archive\_data module
+------------------------------------------------------------
+
+.. automodule:: whisper_experiments.bin.generate_and_archive_data
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: whisper_experiments.bin
+   :members:
+   :undoc-members:
+   :show-inheritance:
