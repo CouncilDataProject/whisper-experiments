@@ -14,10 +14,22 @@ Experiments and planning for potential integration of OpenAIs whisper Speech-to-
 
 ## Quickstart
 
-### Dataset Gather and Preprocessing
+### Loading the Experiment Data
 
 ```python
-# TODO
+from whisper_experiments import data
+
+sessions = data.load_cdp_whisper_experiment_data()
+print(sessions)
+
+#    audio_uri                 ground_truth_transcript_path  ...  gsr_transcript_path  gsr_transcription_time
+# 0  gs://cdp-seattle-2172...  /home/eva/active/...  ...  /home/eva/active/...             546.295414
+# 1  gs://cdp-seattle-2172...  /home/eva/active/...  ...  /home/eva/active/...            2080.045368
+# 2  gs://cdp-seattle-2172...  /home/eva/active/...  ...  /home/eva/active/...            2751.341955
+# 3  gs://cdp-seattle-2172...  /home/eva/active/...  ...  /home/eva/active/...            1188.916651
+# 4  gs://cdp-seattle-2172...  /home/eva/active/...  ...  /home/eva/active/...            1537.532535
+#
+# [5 rows x 9 columns]
 ```
 
 ### String Comparison

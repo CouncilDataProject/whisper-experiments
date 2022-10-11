@@ -27,8 +27,13 @@ classifiers = [
 ]
 dynamic = ["version"]
 dependencies = [
+  "cdp-backend[pipeline]",  # no pin, set by upstreams
+  "cdp-data==0.0.7",
+  "pandas",  # no pin, set by upstreams
+  "pyarrow",
   "rapidfuzz~=2.0",
   "text-diff>=0.0.5",
+  "tqdm",  # no pin, set by upstreams
   "whisper==1.0",
 ]
 
@@ -75,8 +80,8 @@ dev = [
 
 # entry points
 # https://peps.python.org/pep-0621/#entry-points
-# [project.entry-points."console_scripts"]
-# calc-string-length = "whisper_experiments.bin.str_len:main"
+[project.entry-points."console_scripts"]
+generate_and_archive_cdp_whisper_experiments_data = "whisper_experiments.bin.generate_and_archive_data:main"
 
 # build settings
 # https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
@@ -88,7 +93,11 @@ include-package-data = true
 exclude = ["*docs/*", "*tests/*"]
 
 [tool.setuptools.package-data]
-"*" = ["*.yaml", "py.typed"]
+"*" = [
+  "*.yaml",
+  "py.typed",
+  "cdp-whisper-experiments-data.zip",
+]
 
 # tools
 [tool.black]
